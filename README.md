@@ -13,7 +13,8 @@ In this walkthrough, we will go over the five (5) most often used protocols in c
 
 ## Walkthrough
 ### Setup
-**Video version:** *pending*  
+**Video version:** <https://youtu.be/mfN970am53w>  
+![Screenshot](https://i.imgur.com/BSz8Y0i.png)  
 
 1. Go to [the Microsoft Azure portal](https://portal.azure.com/) and log in with your Microsoft account.
 2. Open the Resource Groups section, click Create (take note of the region), and fill in the fields.
@@ -42,7 +43,8 @@ In this walkthrough, we will go over the five (5) most often used protocols in c
 9. Install Wireshark inside the Windows virtual machine from [this link](https://www.wireshark.org/#downloadLink).
 
 ### ICMP (Internet Control Message Protocol)
-**Video version:** *pending*  
+**Video version:** <https://youtu.be/C7s57Y8LKaI>  
+![Screenshot](https://i.imgur.com/exlKwSC.png)  
 
 1. Open Wireshark, and click the Ethernet or Wi-fi with a signal bar icon to begin analyzing the packets going through your network.
 2. Type `icmp` in Wireshark's search bar to filter for ping-related packets only, which use ICMP with no port number.
@@ -53,6 +55,7 @@ In this walkthrough, we will go over the five (5) most often used protocols in c
 
 ### Firewall via an NSG (network security group)
 **Video version:** <https://youtu.be/tZaAPWZgKho>  
+![Screenshot](https://i.imgur.com/eFcrmmn.png)  
 
 1. Create an ongoing ping in PowerShell by typing `ping -t`, paste the private IP address in between, then pressing Enter or Return. (It will look something like `ping 10.0.0.5 -t`.)
 2. In the Azure portal, launch the Ubuntu virtual machine's settings, and click "Network Settings" in the left sidebar under Networking.
@@ -63,21 +66,23 @@ In this walkthrough, we will go over the five (5) most often used protocols in c
 	* Action: Deny
 	* Priority: 290 (for this rule to take precedence over the other default rules)
 5. Delete the denying rule you made in step 4 to make the firewall allow ping packets again.
-6. Stop the ongoing ping by clicking inside PowerShell and pressing Control-C on your keyboard.
+6. Stop the ongoing ping by clicking inside PowerShell and pressing `Control-C` on your keyboard.
 
 ### SSH (Secure Shell) to remotely access a computer via its CLI (command line interface)
 **Video version:** <https://youtu.be/fv7tPi7M1Uk>  
+![Screenshot](https://i.imgur.com/xWiYLyE.png)  
 
 1. In Wireshark, type `ssh` or `tcp.port == 22` to view related packets only.
 2. In PowerShell, log into the Linux virtual machine by typing `ssh username@address`, where: (It will look something like `ssh myname@10.0.0.5`)
 	* Username: What you chose in step 5 of the Setup section.
 	* Address: The private IP address you copied in step 2 of the ICMP section.
 3. Answer `yes` to continue connecting and enter the corresponding password.
-4. Type commands like `uname -a` (username) and `pwd` (print working directory, the current folder or directory you're in) which will generate SSH packets observable in Wireshark.
+4. Type commands like `uname -a` (which returns your username) and `pwd` (print working directory, which returns the current folder or directory you're currently in) which will generate SSH packets observable in Wireshark.
 5. Type `exit` to close the SSH connection to the Linux virtual machine.
 
 ### DHCP (Dynamic Host Configuration Protocol) to assign an IP address to a computer
 **Video version:** <https://youtu.be/OEvH3bHO8Q4>  
+![Screenshot](https://i.imgur.com/CHF0gP9.png)  
 
 1. In Wireshark, type `dhcp` or `udp.port == 67 || udp.port == 68` to view related packets only.
 2. Open Notepad and type the below commands:  
@@ -92,6 +97,7 @@ In this walkthrough, we will go over the five (5) most often used protocols in c
 
 ### DNS (Domain Name System) to assign human-readable names to IP addresses
 **Video version:** <https://youtu.be/WrdQXBvzpJY>  
+![Screenshot](https://i.imgur.com/0Rfs9R5.png)  
 
 1. In Wireshark, type `dns` or `tcp.port == 53` to view related packets only.
 2. In PowerShell, type the following commands to view the websites' corresponding IP addresses:  
@@ -101,6 +107,7 @@ In this walkthrough, we will go over the five (5) most often used protocols in c
 
 ### RDP (Remote Desktop Protocol) to remotely access a computer via its GUI (graphical user interface)
 **Video version:** <https://youtu.be/V7hlqQTGKOQ>  
+![Screenshot](https://i.imgur.com/eSyit5n.png)  
 
 1. In Wireshark, type `tcp.port == 3389` to view RDP-related packets only.
 	* RDP packets will appear regardless of any commands or keystrokes typed, because an active connection between your computer and the virtual machine in the cloud is being maintained.
