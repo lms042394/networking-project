@@ -13,7 +13,7 @@ In this walkthrough, we will go over the five (5) most often used protocols in c
 
 ## Walkthrough
 ### Setup
-**Video version:** <https://youtu.be/mfN970am53w>  
+**Video version:** <https://youtu.be/76Z_3Tqazwc>  
 ![Screenshot](https://i.imgur.com/BSz8Y0i.png)  
 
 1. Go to [the Microsoft Azure portal](https://portal.azure.com/) and log in with your Microsoft account.
@@ -43,7 +43,7 @@ In this walkthrough, we will go over the five (5) most often used protocols in c
 9. Install Wireshark inside the Windows virtual machine from [this link](https://www.wireshark.org/#downloadLink).
 
 ### ICMP (Internet Control Message Protocol)
-**Video version:** <https://youtu.be/C7s57Y8LKaI>  
+**Video version:** <https://youtu.be/CHwUp0Q2vWA>  
 ![Screenshot](https://i.imgur.com/exlKwSC.png)  
 
 1. Open Wireshark, and click the Ethernet or Wi-fi with a signal bar icon to begin analyzing the packets going through your network.
